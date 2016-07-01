@@ -34,9 +34,16 @@
 <script type="text/javascript">
     var cfg = {
         type: 'base',
-        text: '文本内容'
+        bg: '../imgs/p1_people.png',
+        width: 514,
+        height: 306,
+        css: {
+            top: 20,
+            left: 50
+        },
+        center: true
     }
-    var h5 = new H5ComponentBase(cfg);
+    var h5 = new H5ComponentBase('myName', cfg);
     $('.iphone').append(h5);
 </script>
 </body>
