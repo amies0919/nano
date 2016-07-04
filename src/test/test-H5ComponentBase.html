@@ -21,6 +21,10 @@
             top: 50%;
             margin: -270px 0 0 -170px;
         }
+
+        .h5_component_base {
+            transition: all 1s;
+        }
     </style>
     <script type="text/javascript" src="../js/lib/jquery.js"></script>
     <script type="text/javascript" src="../js/H5ComponentBase.js"></script>
@@ -38,13 +42,20 @@
         width: 514,
         height: 306,
         css: {
-            top: 20,
-            left: 50
+            bottom: 0,
+            opacity: 0
         },
+        animateIn: {bottom: 80, opacity: 1},
+        animateOut: {bottom: 0, opacity: 0},
         center: true
     }
     var h5 = new H5ComponentBase('myName', cfg);
     $('.iphone').append(h5);
+    var load = true;
+    $('body').click(function () {
+        load = !load;
+        $('.h5_component').trigger(load ? 'onLeave' : 'onLoad');
+    });
 </script>
 </body>
 </html>
